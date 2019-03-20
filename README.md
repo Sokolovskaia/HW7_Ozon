@@ -3,5 +3,5 @@
 [![codecov](https://codecov.io/gh/Sokolovskaia/HW7_Ozon/branch/master/graph/badge.svg)](https://codecov.io/gh/Sokolovskaia/HW7_Ozon)
 
 
-# Ozon
+# Ozon - поиск книг
 
