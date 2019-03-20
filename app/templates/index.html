@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Интернет-магазин OZON.ru</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Ozon</h1>
+            <form>
+                <div class="form-row">
+                    <div class="col">
+                        <label for="search">Поиск книг по названию, автору или #тэгу</label>
+                        <input name="search" class="form-control" type="search" value="{{search}}"
+                               placeholder="Искать на Ozon" required>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-info">Искать</button>
+                <div>
+                    <h5>Книги</h5>
+                </div>
+
+
+
+            </form>
+
+            <ul class="list-group list-group-flush"> <!-- mt-x добавляет вертикальный отступ -->
+                {% for book in books %}
+                <li class="list-group-item">
+                    "{{book.title}}", Автор: {{book.author}}, Цена: {{book.price}} руб., {{book.tags}}
+                </li>
+                {% endfor %}
+            </ul>
+
+
+            {% if not books %}
+            <p>Книга не найдена. Попробуйте еще раз</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
