@@ -9,13 +9,11 @@ def main():
     container = []  # FIXME: так делать будет нельзя
     wp = create_book('Война и мир', 'Лев Толстой', 1000, ['война', 'безухов', 'дуб'])
     anna = create_book('Анна Каренина', 'Лев Толстой', 800, ['поезд', 'любовь'])
-    potter_phoenix = create_book('Гарри Поттер и Орден Феникса', 'Джоан Роулинг', 700, ['волшебство', 'магия', 'драконы'])
+    potter_phoenix = create_book('Гарри Поттер и Орден Феникса', 'Джоан Роулинг', 700,
+                                 ['волшебство', 'магия', 'драконы'])
     robinson = create_book('Робинзон Крузо', 'Даниэль Дефо', 500, ['остров', 'одиночество', 'пятница'])
     musketeers = create_book('Три мушкетера', 'Александр Дюма', 900, ['честь', 'миледи', 'шпага'])
 
-
-
-    # TODO: сделать распаковку в add_book
     container = add_book(container, wp)
     container = add_book(container, anna)
     container = add_book(container, potter_phoenix)
