@@ -9,27 +9,24 @@ def create_book(title, author, price, tags):
 
 def add_book(container, book):
     copy = container[:]
-    copy.append(book)  # чисто
+    copy.append(book)
     return copy
 
 
-def search_book(container, title):  # посик по заголовку и автору
+def search_book(container, title):
     title_lowercased = title.strip().lower()
     result = []
-    if title[0] == "#":
-        for book in container:
-            for tag in book['tags']:
-                if title[1:] in tag:
-                    result.append(book)
-                    continue
-    else:
-        for book in container:
-            if title_lowercased in book['title'].lower():
+    for book in container:
+        if title_lowercased in book['title'].lower():
+            result.append(book)
+            continue
+
+        if title_lowercased in book['author'].lower():
+            result.append(book)
+            continue
+
+        for tag in book['tags']:
+            if title_lowercased in tag:
                 result.append(book)
                 continue
-
-            if title_lowercased in book['author'].lower():
-                result.append(book)
-                continue
-
     return result
