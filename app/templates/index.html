@@ -34,7 +34,7 @@
             <ul class="list-group list-group-flush"> <!-- mt-x добавляет вертикальный отступ -->
                 {% for book in books %}
                 <li class="list-group-item">
-                    "{{book.title}}", Автор: {{book.author}}, Цена: {{book.price}} руб., {{book.tags}}
+                    "{{book.title}}", Автор: {{book.author}}, Цена: {{book.price}} руб., {{book.tags|join(', ')}}
                 </li>
                 {% endfor %}
             </ul>

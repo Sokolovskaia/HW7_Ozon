@@ -3,7 +3,7 @@ from flask import Flask, render_template, request
 from app.ozon import create_book, add_book, search_book
 
 
-def main():
+def start():
     app = Flask(__name__)
 
     container = []  # FIXME: так делать будет нельзя
@@ -34,4 +34,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    start()
