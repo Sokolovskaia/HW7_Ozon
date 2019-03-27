@@ -1,7 +1,9 @@
+import waitress
 from flask import Flask, render_template, request
 
 from app.ozon import create_book, add_book, search_book
 
+import os
 
 def start():
     app = Flask(__name__)
@@ -30,7 +32,10 @@ def start():
 
         return render_template('index.html', books=container)
 
-    app.run(port=9876, debug=True)
+    if os.getenv('APP_ENV') == 'PROD' and os.getenv('PORT'):
+        waitress.serve(app, port=os.getenv('PORT'))
+    else:
+        app.run(port=9876, debug=True)
 
 
 if __name__ == '__main__':
