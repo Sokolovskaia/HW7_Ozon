@@ -1,10 +1,10 @@
 from app.ozon import create_book, add_book, search_book
 
 
-def test_create_book():
-    assert {'title': 'Война и мир', 'author': 'Лев Толстой', 'price': 1000,
-            'tags': ['#война', '#безухов', '#дуб']} == create_book('Война и мир', 'Лев Толстой', 1000,
-                                                                   ['#война', '#безухов', '#дуб'])
+# def test_create_book():
+#     assert {'title': 'Война и мир', 'author': 'Лев Толстой', 'price': 1000,
+#             'tags': ['#война', '#безухов', '#дуб']} == create_book('Война и мир', 'Лев Толстой', 1000,
+#                                                                    ['#война', '#безухов', '#дуб'])
 
 
 def test_add_book():
