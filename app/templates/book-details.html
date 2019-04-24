@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ book.title }}</title>
+</head>
+<body>
+<h1>"{{ book.title }}"</h1>
+<p>Автор: {{ book.author }}</p>
+<p>Цена: {{ book.price }} руб.</p>
+<p>Хештеги: {{book.tags|join(', ')}}</p>
+
+<!-- прописываем явно адрес -->
+<form action="{{ url_for('book_remove', book_id=book.id) }}" method="post">
+    <button> Remove </button>
+</form>
+
+<div class="mt-2">
+    <a href="{{ url_for('book_edit', book_id=book.id) }}" class="btn btn-primary">Edit</a>
+
+</div>
+
+</body>
+</html>
