@@ -5,6 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
     <title>Document</title>
 </head>
 <body>
@@ -16,11 +19,17 @@
             <form action="{{ url_for('book_save', book_id=book.id) }}" method="post">
                 <div class="form-row">
                     <div class="col">
-                        <p><label> Автор книги: <input type="text" value="{{ book.author }}" name="author" placeholder="Фамилия, имя" required></label></p>
-                        <p><label> Название книги: <input type="text" value="{{ book.title }}" name="title" placeholder="Название" required></label></p>
-                        <p><label> Цена: <input type="text" value="{{ book.price }}" name="price" placeholder=" руб." required></label></p>
-                        <p><label> Тэги<input type="text" value="{{ book.tags }}" name="tags" placeholder="#" required></label></p>
-                        <p><button type="button" class="btn btn-danger">Сохранить</button></p>
+                        <p><label> Автор книги: <input type="text" value="{{ book.author }}" name="author"
+                                                       placeholder="Фамилия, имя" required></label></p>
+                        <p><label> Название книги: <input type="text" value="{{ book.title }}" name="title"
+                                                          placeholder="Название" required></label></p>
+                        <p><label> Цена: <input type="text" value="{{ book.price }}" name="price" placeholder=" руб."
+                                                required></label></p>
+                        <p><label> Тэги: <input type="text" value="{{ book.tags }}" name="tags" placeholder="#"
+                                                required></label></p>
+                        <p>
+                            <button type="submit" class="btn btn-info"> Сохранить </button>
+                        </p>
                     </div>
                 </div>
             </form>
